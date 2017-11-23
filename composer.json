@@ -12,6 +12,9 @@
         }
     },
     "extra": {
+        "branch-alias": {
+            "dev-master": "2.0.x-dev"
+        },
         "neos": {
             "package-key": "Ttree.JsonStore"
         },
