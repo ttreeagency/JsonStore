@@ -6,7 +6,7 @@ use Ttree\JsonStore\Domain\Model\Document;
 use Ttree\JsonStore\Domain\Repository\DocumentRepository;
 use Ttree\JsonStore\Exception;
 use Neos\Flow\Annotations as Flow;
-use Neos\Flow\Persistence\Generic\PersistenceManager;
+use Neos\Flow\Persistence\PersistenceManagerInterface;
 use Neos\Flow\Persistence\QueryInterface;
 use Neos\Utility\Arrays;
 
@@ -22,7 +22,7 @@ class StoreService
     protected $documentRepository;
 
     /**
-     * @var PersistenceManager
+     * @var PersistenceManagerInterface
      * @Flow\Inject
      */
     protected $persistenceManager;
