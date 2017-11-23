@@ -5,10 +5,10 @@ namespace Ttree\JsonStore\Service;
 use Ttree\JsonStore\Domain\Model\Document;
 use Ttree\JsonStore\Domain\Repository\DocumentRepository;
 use Ttree\JsonStore\Exception;
-use TYPO3\Flow\Annotations as Flow;
-use TYPO3\Flow\Persistence\Generic\PersistenceManager;
-use TYPO3\Flow\Persistence\QueryInterface;
-use TYPO3\Flow\Utility\Arrays;
+use Neos\Flow\Annotations as Flow;
+use Neos\Flow\Persistence\Generic\PersistenceManager;
+use Neos\Flow\Persistence\QueryInterface;
+use Neos\Flow\Utility\Arrays;
 
 /**
  * @Flow\Scope("singleton")
@@ -47,7 +47,7 @@ class StoreService
      * @param int $limit
      * @param string $sortBy
      * @param string $sortDirection
-     * @return \TYPO3\Flow\Persistence\QueryResultInterface
+     * @return \Neos\Flow\Persistence\QueryResultInterface
      */
     public function paginate($type, $offset = 0, $limit = 50, $sortBy = 'createdAt', $sortDirection = QueryInterface::ORDER_DESCENDING)
     {

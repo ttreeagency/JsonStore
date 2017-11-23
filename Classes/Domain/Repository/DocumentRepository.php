@@ -3,9 +3,9 @@
 namespace Ttree\JsonStore\Domain\Repository;
 
 use Ttree\JsonStore\Domain\Model\Document;
-use TYPO3\Flow\Persistence\QueryInterface;
-use TYPO3\Flow\Persistence\Repository;
-use TYPO3\Flow\Annotations as Flow;
+use Neos\Flow\Persistence\QueryInterface;
+use Neos\Flow\Persistence\Repository;
+use Neos\Flow\Annotations as Flow;
 
 /**
  * @Flow\Scope("singleton")

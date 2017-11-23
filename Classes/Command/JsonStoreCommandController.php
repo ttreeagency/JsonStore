@@ -4,8 +4,8 @@ namespace Ttree\JsonStore\Command;
 use Ttree\JsonStore\Domain\Model\Document;
 use Ttree\JsonStore\Domain\Model\DocumentHash;
 use Ttree\JsonStore\Service\StoreService;
-use TYPO3\Flow\Annotations as Flow;
-use TYPO3\Flow\Cli\CommandController;
+use Neos\Flow\Annotations as Flow;
+use Neos\Flow\Cli\CommandController;
 
 class JsonStoreCommandController extends CommandController
 {
