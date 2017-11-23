@@ -37,6 +37,7 @@ class StoreService
     {
         $document = new Document($label, $type, $data);
         $this->documentRepository->add($document);
+        $this->emitDocumentAdded($document);
         return $document;
     }
 
@@ -84,6 +85,7 @@ class StoreService
             $document->setData([]);
         }
         $this->documentRepository->update($document);
+        $this->emitDocumentUpdated($document);
         return $document;
     }
 
@@ -94,6 +96,7 @@ class StoreService
     {
         $document = $this->documentRepository->findByIdentifier($identifier);
         $this->documentRepository->remove($document);
+        $this->emitDocumentRemoved($document);
     }
 
     /**
@@ -103,5 +106,29 @@ class StoreService
     public function identifier(Document $document)
     {
         return $this->persistenceManager->getIdentifierByObject($document);
+    }
+
+    /**
+     * @Flow\Signal
+     */
+    protected function emitDocumentAdded(Document $document)
+    {
+
+    }
+
+    /**
+     * @Flow\Signal
+     */
+    protected function emitDocumentUpdated(Document $document)
+    {
+
+    }
+
+    /**
+     * @Flow\Signal
+     */
+    protected function emitDocumentRemoved(Document $document)
+    {
+
     }
 }
