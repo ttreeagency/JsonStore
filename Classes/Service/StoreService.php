@@ -6,7 +6,7 @@ use Ttree\JsonStore\Domain\Model\Document;
 use Ttree\JsonStore\Domain\Repository\DocumentRepository;
 use Ttree\JsonStore\Exception;
 use TYPO3\Flow\Annotations as Flow;
-use TYPO3\Flow\Persistence\Generic\PersistenceManager;
+use TYPO3\Flow\Persistence\PersistenceManagerInterface;
 use TYPO3\Flow\Persistence\QueryInterface;
 use TYPO3\Flow\Utility\Arrays;
 
@@ -22,7 +22,7 @@ class StoreService
     protected $documentRepository;
 
     /**
-     * @var PersistenceManager
+     * @var PersistenceManagerInterface
      * @Flow\Inject
      */
     protected $persistenceManager;
