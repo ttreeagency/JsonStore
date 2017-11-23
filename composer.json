@@ -1,0 +1,19 @@
+{
+    "name": "ttree/jsonstore",
+    "description": "Minimalistic JSON document storage",
+    "type": "neos-package",
+    "license": "MIT",
+    "require": {
+        "typo3/flow": "^3.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Ttree\\JsonStore\\": "Classes/"
+        }
+    },
+    "extra": {
+        "neos": {
+            "package-key": "Ttree.JsonStore"
+        }
+    }
+}
