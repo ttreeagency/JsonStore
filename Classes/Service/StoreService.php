@@ -8,7 +8,7 @@ use Ttree\JsonStore\Exception;
 use Neos\Flow\Annotations as Flow;
 use Neos\Flow\Persistence\Generic\PersistenceManager;
 use Neos\Flow\Persistence\QueryInterface;
-use Neos\Flow\Utility\Arrays;
+use Neos\Utility\Arrays;
 
 /**
  * @Flow\Scope("singleton")
