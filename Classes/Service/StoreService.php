@@ -54,6 +54,11 @@ class StoreService
         return $this->documentRepository->paginateByType($type, $offset, $limit, $sortBy, $sortDirection);
     }
 
+    public function findByType($type)
+    {
+        return $this->documentRepository->findByType($type);
+    }
+
     /**
      * @param string $type
      */

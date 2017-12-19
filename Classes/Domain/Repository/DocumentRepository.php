@@ -2,6 +2,8 @@
 
 namespace Ttree\JsonStore\Domain\Repository;
 
+use Doctrine\Common\Persistence\ObjectManager;
+use Doctrine\ORM\Query;
 use Ttree\JsonStore\Domain\Model\Document;
 use TYPO3\Flow\Persistence\QueryInterface;
 use TYPO3\Flow\Persistence\Repository;
@@ -12,6 +14,12 @@ use TYPO3\Flow\Annotations as Flow;
  */
 class DocumentRepository extends Repository
 {
+    /**
+     * @var ObjectManager
+     * @Flow\Inject
+     */
+    protected $entityManager;
+
     protected $defaultOrderings = [
         'createdAt' => QueryInterface::ORDER_DESCENDING
     ];
@@ -47,5 +55,14 @@ class DocumentRepository extends Repository
         $query->matching($query->equals('type', $type));
 
         return $query->count();
+    }
+
+    public function findAllTypes()
+    {
+        /** @var Query $query */
+        $query = $this->entityManager->createQuery('SELECT DISTINCT d.type FROM Ttree\JsonStore\Domain\Model\Document d');
+        return \array_map(function ($row) {
+            return $row['type'];
+        }, $query->execute());
     }
 }
