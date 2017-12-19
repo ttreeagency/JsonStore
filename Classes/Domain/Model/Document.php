@@ -116,6 +116,11 @@ class Document
         $this->updateHash();
     }
 
+    public function matchType($type)
+    {
+        return $this->type === $type;
+    }
+
     protected function updateHash()
     {
         $this->hash = (string)(new DocumentHash($this->data));
