@@ -108,6 +108,11 @@ class StoreService
         return $this->persistenceManager->getIdentifierByObject($document);
     }
 
+    public function findByType($type)
+    {
+        return $this->documentRepository->findByType($type);
+    }
+
     /**
      * @Flow\Signal
      */
